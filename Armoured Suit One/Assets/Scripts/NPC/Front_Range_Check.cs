@@ -14,44 +14,55 @@ public class Front_Range_Check : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (main.tag == "Player")
+        if(other.gameObject == main.gameObject.GetComponent<NPC_AI>().mainTarget)
         {
-            if (other.gameObject.tag == "Enemy")
+            if (main.tag == "Player")
             {
-                isRanged = true;
+                if (other.gameObject.tag == "Enemy")
+                {
+                    isRanged = true;
+                }
             }
-        }
-        if (main.tag == "Enemy")
-        {
-            if (other.gameObject.tag == "Player" || other.gameObject.tag == "Ally")
+            if (main.tag == "Enemy")
             {
-                isRanged = true;
+                if (other.gameObject.tag == "Player" || other.gameObject.tag == "Ally")
+                {
+                    isRanged = true;
+                }
             }
-        }
-        if (main.tag == "Ally")
-        {
-            if (other.gameObject.tag == "Enemy")
+            if (main.tag == "Ally")
             {
-                isRanged = true;
+                if (other.gameObject.tag == "Enemy")
+                {
+                    isRanged = true;
+                }
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (main.tag == "Enemy")
+        if (other.gameObject == main.gameObject.GetComponent<NPC_AI>().mainTarget)
         {
-            if (other.gameObject.tag == "Player" || other.gameObject.tag == "Ally")
+            if (main.tag == "Enemy")
             {
-                isRanged = false;
+                if (other.gameObject.tag == "Player" || other.gameObject.tag == "Ally")
+                {
+                    isRanged = false;
+                }
+            }
+            if (main.tag == "Ally")
+            {
+                if (other.gameObject.tag == "Enemy")
+                {
+                    isRanged = false;
+                }
             }
         }
-        if (main.tag == "Ally")
+        else if (main.gameObject.GetComponent<NPC_AI>().mainTarget == null)
         {
-            if (other.gameObject.tag == "Enemy")
-            {
-                isRanged = false;
-            }
+            isRanged = false;
         }
+
     }
 }

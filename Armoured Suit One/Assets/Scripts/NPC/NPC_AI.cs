@@ -36,8 +36,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
     public float deathTime = 3f;
 
     public Vector3 evasionDirection;
-    public Vector3 moveDirection;
-    public Vector3 rndDirection;
+    public Vector3 moveDirection;    
 
     public bool isCrashed = false;
     public bool isDead = false;
@@ -52,8 +51,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
 
     void Start()
     {
-        moveDirection = Vector3.forward;
-        StartCoroutine("MakeRndDirection");
+        moveDirection = Vector3.forward;        
     }
 
     void Update()
@@ -63,7 +61,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
             curTime += Time.deltaTime;
             if (npcSpeedX >= 0)
             {
-                npcSpeedX += -acceleration * npcSpeed;
+                npcSpeedX += - 10f * acceleration * npcSpeed;
             }
             if (curTime > coolTime)
             {
@@ -98,10 +96,11 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 }
                 if (radarMgr.targets.Count > 0 && radarMgr.targets[0] != null)
                 {
+                    int rnd = Random.Range(0, radarMgr.targets.Count);
                     stateCurTime += Time.deltaTime;
                     if (stateCurTime > stateCoolTime)
                     {                        
-                        mainTarget = radarMgr.targets[0];
+                        mainTarget = radarMgr.targets[rnd];
                         npcState = NPCSTATE.SEARCH;
                         stateCurTime = 0;
                     }
@@ -119,7 +118,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                     transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), npcRotSpeed * Time.deltaTime);
                     if (frontRangeCheck.isRanged)
                     {
-                        if (npcSpeedX <= npcSpeed)
+                        if (npcSpeedX <= 1.5f * npcSpeed)
                         {
                             npcSpeedX += acceleration * npcSpeed;
                         }
@@ -130,18 +129,15 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                         attackCurTime += Time.deltaTime;
                         if (attackCurTime > attackCoolTime)
                         {
-                            npcState = NPCSTATE.ATTACK;
+                            chaseCurTime = 0;
                             attackCurTime = 0;
+                            npcState = NPCSTATE.ATTACK;
                         }
                     }
                     else if (!frontRangeCheck.isRanged)
                     {
                         chaseCurTime += Time.deltaTime;
-                        if (chaseCurTime < chaseCoolTime)
-                        {
-
-                        }
-                        else
+                        if (chaseCurTime >= chaseCoolTime)
                         {
                             chaseCurTime = 0;
                             npcState = NPCSTATE.EVASION;
@@ -168,8 +164,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 }
                 break;
             case NPCSTATE.EVASION:
-                evasionCurTime += Time.deltaTime;
-                StartCoroutine("MakeRndDirection");
+                evasionCurTime += Time.deltaTime;                
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(evasionDirection), npcRotSpeed * Time.deltaTime);
                 if (evasionCurTime > evasionCoolTime)
                 {
@@ -209,29 +204,5 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
             moveDirection = Vector3.Reflect(dir, collision.contacts[0].normal);
             isCrashed = true;
         }
-    }
-
-    IEnumerator MakeRndDirection()
-    {
-        int rnd = Random.Range(0, 3);
-        switch (rnd)
-        {
-            case 0:
-                rndDirection = transform.up;
-                break;
-            case 1:
-                rndDirection = -transform.up;
-                break;
-            case 2:
-                rndDirection = transform.right;
-                break;
-            case 3:
-                rndDirection = -transform.right;
-                break;
-            default:
-                break;
-        }
-        evasionDirection = rndDirection;
-        yield return new WaitForEndOfFrame();
     }
 }

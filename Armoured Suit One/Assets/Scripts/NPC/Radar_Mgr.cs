@@ -23,7 +23,7 @@ public class Radar_Mgr : MonoBehaviour
                 }
                 break;
             case "Enemy":
-                if (main.tag == "Player" || gameObject.tag == "Ally")
+                if (main.tag == "Player" || main.tag == "Ally")
                 {
                     targets.Add(other.gameObject);
                 }

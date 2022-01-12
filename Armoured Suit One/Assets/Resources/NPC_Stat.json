@@ -1,0 +1,146 @@
+[
+ {
+   "Index": 1,
+   "Name": "Interceptor",
+   "Type": "Small",
+   "Hp": 1000,
+   "Shield": 500,
+   "Armor": 0,
+   "Speed": 1500
+ },
+ {
+   "Index": 2,
+   "Name": "Fighter",
+   "Type": "Small",
+   "Hp": 1000,
+   "Shield": 500,
+   "Armor": 50,
+   "Speed": 1000
+ },
+ {
+   "Index": 3,
+   "Name": "Heavy Fighter",
+   "Type": "Small",
+   "Hp": 1500,
+   "Shield": 500,
+   "Armor": 100,
+   "Speed": 750
+ },
+ {
+   "Index": 4,
+   "Name": "Corvette",
+   "Type": "Middle",
+   "Hp": 2000,
+   "Shield": 0,
+   "Armor": 100,
+   "Speed": 500
+ },
+ {
+   "Index": 5,
+   "Name": "Frigite",
+   "Type": "Big",
+   "Hp": 10000,
+   "Shield": 0,
+   "Armor": 200,
+   "Speed": 200
+ },
+ {
+   "Index": 6,
+   "Name": "Crusier",
+   "Type": "Big",
+   "Hp": 20000,
+   "Shield": 0,
+   "Armor": 300,
+   "Speed": 100
+ },
+ {
+   "Index": 7,
+   "Name": "BattleShip",
+   "Type": "Boss",
+   "Hp": 50000,
+   "Shield": 0,
+   "Armor": 500,
+   "Speed": 50
+ },
+ {
+   "Index": 8,
+   "Name": "Carrier",
+   "Type": "Boss",
+   "Hp": 50000,
+   "Shield": 0,
+   "Armor": 500,
+   "Speed": 50
+ },
+ {
+   "Index": 9,
+   "Name": "Gun Turret",
+   "Type": "Turret",
+   "Hp": 1000,
+   "Shield": 0,
+   "Armor": 100,
+   "Speed": 0
+ },
+ {
+   "Index": 10,
+   "Name": "Missale Turret",
+   "Type": "Turret",
+   "Hp": 1000,
+   "Shield": 0,
+   "Armor": 100,
+   "Speed": 0
+ },
+ {
+   "Index": 11,
+   "Name": "Flack Turret",
+   "Type": "Turret",
+   "Hp": 1000,
+   "Shield": 0,
+   "Armor": 100,
+   "Speed": 0
+ },
+ {
+   "Index": 12,
+   "Name": "Beam Turret",
+   "Type": "Turret",
+   "Hp": 1000,
+   "Shield": 0,
+   "Armor": 100,
+   "Speed": 0
+ },
+ {
+   "Index": 13,
+   "Name": "Beam Cannon",
+   "Type": "Turret",
+   "Hp": 2000,
+   "Shield": 0,
+   "Armor": 200,
+   "Speed": 0
+ },
+ {
+   "Index": 14,
+   "Name": "Space Station",
+   "Type": "Building",
+   "Hp": 100000,
+   "Shield": 0,
+   "Armor": 500,
+   "Speed": 0
+ },
+ {
+   "Index": 15,
+   "Name": "Object",
+   "Type": "Building",
+   "Hp": 1000,
+   "Shield": 0,
+   "Armor": 0,
+   "Speed": 0
+ },
+ {
+   "Index": 16,
+   "Name": "Wreck",
+   "Type": "Building",
+   "Hp": 1000,
+   "Shield": 0,
+   "Armor": 0,
+   "Speed": 0
+ }
+]

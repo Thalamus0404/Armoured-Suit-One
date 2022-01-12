@@ -122,8 +122,8 @@ Material:
     - _ScrollingSpeed: {r: -0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecOffset: {r: 0, g: 3.07, b: 0, a: 0}
-    - _TeamColor: {r: 1, g: 0.57048684, b: 0.1102941, a: 1}
-    - _Tint: {r: 1, g: 0, b: 0, a: 1}
-    - _Windows: {r: 1, g: 0.24327318, b: 0.2117647, a: 1}
+    - _TeamColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Tint: {r: 0, g: 0, b: 0, a: 1}
+    - _Windows: {r: 1, g: 0.03980099, b: 0, a: 1}
     - _WindowsColor: {r: 0.42647058, g: 0.6440161, b: 1, a: 1}
   m_BuildTextureStacks: []

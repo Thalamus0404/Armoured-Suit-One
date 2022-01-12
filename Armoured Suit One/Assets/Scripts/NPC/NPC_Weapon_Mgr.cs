@@ -8,13 +8,15 @@ public class NPC_Weapon_Mgr : MonoBehaviour
     public GameObject mainTarget;
     public GameObject weapon;
     public GameObject bulletPrefab1;
-    public float fireCoolTime = 1f;
+    public float fireCoolTime;
     public float fireCurTime;
 
     Bullet_Mgr bullet_Mgr;
 
     public float bulletSpeed;
     public int bulletDamage;
+
+    public GameObject main;
 
     void Start()
     {
@@ -36,13 +38,13 @@ public class NPC_Weapon_Mgr : MonoBehaviour
             Vector3 dir = mainTarget.transform.position - firePosition.transform.position;
             dir.Normalize();
             GameObject bullet = Instantiate(weapon, firePosition.transform.position, Quaternion.LookRotation(dir)) as GameObject;
-            if (gameObject.tag == "Ally")
+            if (main.tag == "Ally")
             {
-                bullet.tag = "AllyBullet";
+                bullet.tag = "Ally Bullet";
             }
-            else if (gameObject.tag == "Enemy")
+            else if (main.tag == "Enemy")
             {
-                bullet.tag = "EnemyBullet";
+                bullet.tag = "Enemy Bullet";
             }
             bullet_Mgr = bullet.GetComponent<Bullet_Mgr>();
             bullet_Mgr.bulletSpeed = bulletSpeed;
