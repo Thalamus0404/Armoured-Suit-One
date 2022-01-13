@@ -78,6 +78,11 @@ MonoBehaviour:
   main: {fileID: 7340127068524937787}
   rndDirection: {x: 0, y: 0, z: 0}
   npc: {fileID: 1406986251546845737}
+  curTime: 0
+  coolTime: 10
+  shieldRegen: 1
+  isDamaged: 0
+  isDead: 0
 --- !u!1 &3050483749776253916
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +244,7 @@ MonoBehaviour:
   fireCoolTime: 0.2
   fireCurTime: 0
   bulletSpeed: 100
-  bulletDamage: 20
+  bulletDamage: 300
   main: {fileID: 7340127068524937787}
 --- !u!1 &7340127067493510236
 GameObject:
@@ -424,7 +429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7340127067725567036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 7340127068524937790}
@@ -507,6 +512,7 @@ MonoBehaviour:
   frontRangeCheck: {fileID: 7340127067668846527}
   weaponMgr: {fileID: 7340127067386561603}
   npc: {fileID: 0}
+  hitCheck: {fileID: 1406986251837204747}
   stateCurTime: 0
   stateCoolTime: 3
   attackCurTime: 0
@@ -515,8 +521,6 @@ MonoBehaviour:
   evasionDirection: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   isCrashed: 0
-  isDead: 0
-  isDamaged: 0
   curTime: 0
   coolTime: 1
   chaseCurTime: 0
@@ -542,6 +546,18 @@ MonoBehaviour:
   shield: 500
   armor: 50
   speed: 10
+  weapon1Index: 0
+  weapon1Name: 
+  weapon1ATK: 0
+  weapon1Speed: 0
+  weapon1Range: 0
+  weapon2Index: 0
+  weapon2Name: 
+  weapon2ATK: 0
+  weapon2Speed: 0
+  weapon2Range: 0
+  maxHp: 0
+  maxShield: 0
 --- !u!54 &739922615
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Player_Mgr : MonoBehaviour
     public int weapon1Index;
     public string weapon1Name;
     public int weapon1ATK;
-    public int weapon1Speed;
+    public float weapon1Speed;
     public int weapon1Range;
     public int weapon1Energy;
     public int weapon1Trans;
@@ -32,7 +32,7 @@ public class Player_Mgr : MonoBehaviour
     public int weapon2Index;
     public string weapon2Name;
     public int weapon2ATK;
-    public int weapon2Speed;
+    public float weapon2Speed;
     public int weapon2Range;
     public int weapon2Energy;
     public int weapon2Trans;

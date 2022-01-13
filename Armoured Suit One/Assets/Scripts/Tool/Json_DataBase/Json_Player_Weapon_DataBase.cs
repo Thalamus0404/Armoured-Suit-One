@@ -18,7 +18,7 @@ public class Json_Player_Weapon_DataBase : MonoBehaviour
             weapon.index = int.Parse(jsonPlayerWeapon[i]["Index"]);
             weapon.objectName = jsonPlayerWeapon[i]["Name"];
             weapon.atk = int.Parse(jsonPlayerWeapon[i]["ATK"]);
-            weapon.speed = int.Parse(jsonPlayerWeapon[i]["Speed"]);
+            weapon.speed = float.Parse(jsonPlayerWeapon[i]["Speed"]);
             weapon.range = int.Parse(jsonPlayerWeapon[i]["Range"]);
             weapon.energy = int.Parse(jsonPlayerWeapon[i]["Energy"]);
             weapon.trans = int.Parse(jsonPlayerWeapon[i]["Trans"]);

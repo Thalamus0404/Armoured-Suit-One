@@ -41,7 +41,7 @@ public class Player_Move : MonoBehaviour // 플레이어의 이동과 충돌 시 반작용 기�
             curTime += Time.deltaTime;
             if (speedX >= 0)
             {
-                speedX += -20f * acceleration * speed;
+                speedX += -10f * acceleration * speed;
             }
             if (curTime > coolTime)
             {

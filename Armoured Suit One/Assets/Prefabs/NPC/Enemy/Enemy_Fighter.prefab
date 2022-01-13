@@ -80,7 +80,7 @@ MonoBehaviour:
   fireCoolTime: 0.2
   fireCurTime: 0
   bulletSpeed: 100
-  bulletDamage: 20
+  bulletDamage: 300
   main: {fileID: 1265342110281619184}
 --- !u!1 &1265342110209881340
 GameObject:
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265342110209881340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1265342110281619196}
@@ -188,6 +188,8 @@ MonoBehaviour:
   radarMgr: {fileID: 3732255715304239809}
   frontRangeCheck: {fileID: 2885856785279543503}
   weaponMgr: {fileID: 1265342109903848345}
+  npc: {fileID: 0}
+  hitCheck: {fileID: 7217370691561494087}
   stateCurTime: 0
   stateCoolTime: 3
   attackCurTime: 0
@@ -196,7 +198,6 @@ MonoBehaviour:
   evasionDirection: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   isCrashed: 0
-  isDead: 0
   curTime: 0
   coolTime: 1
   chaseCurTime: 0
@@ -222,6 +223,18 @@ MonoBehaviour:
   shield: 0
   armor: 0
   speed: 0
+  weapon1Index: 0
+  weapon1Name: 
+  weapon1ATK: 0
+  weapon1Speed: 0
+  weapon1Range: 0
+  weapon2Index: 0
+  weapon2Name: 
+  weapon2ATK: 0
+  weapon2Speed: 0
+  weapon2Range: 0
+  maxHp: 0
+  maxShield: 0
 --- !u!54 &740939211352957451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1335,3 +1348,8 @@ MonoBehaviour:
   main: {fileID: 1265342110281619184}
   rndDirection: {x: 0, y: 0, z: 0}
   npc: {fileID: 7217370692000750949}
+  curTime: 0
+  coolTime: 10
+  shieldRegen: 1
+  isDamaged: 0
+  isDead: 0

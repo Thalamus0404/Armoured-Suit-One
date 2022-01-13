@@ -26,18 +26,21 @@ public class Player_HitCheck : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    {        
         switch (other.tag)
         {
             case "Player Bullet":
                 break;
             case "Enemy Bullet":
-                Destroy(other);
-                isDamaged = true;
                 curTime = 0;
+                Destroy(other);
+                isDamaged = true;                
                 if (player.flightShield > 0)
                 {
-                    player.flightShield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - player.flightArmor;
+                    if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= player.flightArmor)
+                    {
+                        player.flightShield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - player.flightArmor;
+                    }
                 }
                 else
                 {
@@ -64,10 +67,7 @@ public class Player_HitCheck : MonoBehaviour
     {
         if (curTime < coolTime)
         {
-            if (isDamaged)
-            {
-                curTime += Time.deltaTime;
-            }
+            curTime += Time.deltaTime;
         }
         else
         {

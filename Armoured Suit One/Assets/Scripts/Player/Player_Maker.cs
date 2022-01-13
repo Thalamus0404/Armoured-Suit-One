@@ -12,6 +12,9 @@ public class Player_Maker : MonoBehaviour
     public Json_Player_Weapon_DataBase weapon_DataBase;
 
     public int flightIndex;
+    public int weapon1Index;
+    public int weapon2Index;
+
     public string flightName;
     public int flightHp;
     public int flightShield;
@@ -20,20 +23,18 @@ public class Player_Maker : MonoBehaviour
     public int flightBooster;
     public int flightEnergy;
     public int flightTrans;
-
-    public int weapon1Index;
+    
     public string weapon1Name;
     public int weapon1ATK;
-    public int weapon1Speed;
+    public float weapon1Speed;
     public int weapon1Range;
     public int weapon1Energy;
     public int weapon1Trans;
     public int weapon1Charge;
-
-    public int weapon2Index;
+    
     public string weapon2Name;
     public int weapon2ATK;
-    public int weapon2Speed;
+    public float weapon2Speed;
     public int weapon2Range;
     public int weapon2Energy;
     public int weapon2Trans;

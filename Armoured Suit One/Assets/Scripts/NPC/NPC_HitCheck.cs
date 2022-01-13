@@ -9,6 +9,14 @@ public class NPC_HitCheck : MonoBehaviour
     public Vector3 rndDirection;
     public NPC_Mgr npc;
 
+    public float curTime;
+    public float coolTime = 10f;
+
+    public int shieldRegen = 1;
+
+    public bool isDamaged = false;
+    public bool isDead = false;
+
     void Start()
     {
         ai = main.GetComponent<NPC_AI>();
@@ -16,56 +24,88 @@ public class NPC_HitCheck : MonoBehaviour
         StartCoroutine("MakeRndDirection");
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
+        ShieldRecharge();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {        
         switch (other.tag)
         {
             case "Player Bullet":
+                curTime = 0;
                 Destroy(other);
-                if (main.gameObject.tag == "Enemy" && !ai.isDead)
+                isDamaged = true;
+                if (main.gameObject.tag == "Enemy" && !isDead)
                 {
                     StartCoroutine("MakeRndDirection");
                     if (npc.shield > 0)
                     {
-                        npc.shield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage;
+                        if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= npc.armor)
+                        {
+                            npc.shield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - npc.armor;
+                        }
                     }
                     else
                     {
-                        npc.hp -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage;
+                        npc.shield = 0;
+                        if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= npc.armor)
+                        {
+                            npc.hp -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - npc.armor;
+                        }
                     }
                     ai.stateCurTime = 0;
                     ai.npcState = NPC_AI.NPCSTATE.EVASION;
                 }
                 break;
             case "Enemy Bullet":
+                curTime = 0;
                 Destroy(other);
-                if (main.gameObject.tag == "Ally" && !ai.isDead)
+                isDamaged = true;
+                if (main.gameObject.tag == "Ally" && !isDead)
                 {
                     StartCoroutine("MakeRndDirection");
                     if (npc.shield > 0)
                     {
-                        npc.shield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage;
+                        if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= npc.armor)
+                        {
+                            npc.shield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - npc.armor;
+                        }
                     }
                     else
                     {
-                        npc.hp -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage;
+                        npc.shield = 0;
+                        if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= npc.armor)
+                        {
+                            npc.hp -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - npc.armor;
+                        }
                     }
                     ai.stateCurTime = 0;
                     ai.npcState = NPC_AI.NPCSTATE.EVASION;
                 }
                 break;
             case "Ally Bullet":
+                curTime = 0;
                 Destroy(other);
-                if (main.gameObject.tag == "Enemy" && !ai.isDead)
+                isDamaged = true;
+                if (main.gameObject.tag == "Enemy" && !isDead)
                 {
                     StartCoroutine("MakeRndDirection");
                     if (npc.shield > 0)
                     {
-                        npc.shield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage;
+                        if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= npc.armor)
+                        {
+                            npc.shield -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - npc.armor;
+                        }
                     }
                     else
                     {
-                        npc.hp -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage;
+                        npc.shield = 0;
+                        if (other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage >= npc.armor)
+                        {
+                            npc.hp -= other.gameObject.GetComponent<Bullet_Mgr>().bulletDamage - npc.armor;
+                        }
                     }
                     ai.stateCurTime = 0;
                     ai.npcState = NPC_AI.NPCSTATE.EVASION;
@@ -74,7 +114,7 @@ public class NPC_HitCheck : MonoBehaviour
             default:
                 break;
         }
-        if (npc.hp <= 0 && !ai.isDead)
+        if (npc.hp <= 0 && !isDead)
         {
             npc.hp = 0;
             ai.npcState = NPC_AI.NPCSTATE.DESTROY;
@@ -103,5 +143,25 @@ public class NPC_HitCheck : MonoBehaviour
         }
         ai.evasionDirection = rndDirection;
         yield return new WaitForEndOfFrame();
+    }
+
+    public void ShieldRecharge()
+    {
+        if (curTime < coolTime)
+        {
+            curTime += Time.deltaTime;
+        }
+        else
+        {
+            isDamaged = false;
+            if (npc.shield < npc.maxShield)
+            {
+                npc.shield += shieldRegen;
+            }
+            else
+            {
+                npc.shield = npc.maxShield;
+            }
+        }
     }
 }

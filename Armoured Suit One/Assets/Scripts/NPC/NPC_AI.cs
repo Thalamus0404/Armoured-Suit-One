@@ -29,6 +29,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
     public Front_Range_Check frontRangeCheck;
     public NPC_Weapon_Mgr weaponMgr;
     public NPC_Mgr npc;
+    public NPC_HitCheck hitCheck;
 
     public float stateCurTime;
     public float stateCoolTime = 5f;
@@ -40,8 +41,6 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
     public Vector3 moveDirection;    
 
     public bool isCrashed = false;
-    public bool isDead = false;
-    public bool isDamaged = false;
 
     public float curTime;
     public float coolTime = 1f;
@@ -66,7 +65,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
             curTime += Time.deltaTime;
             if (npcSpeedX >= 0)
             {
-                npcSpeedX += - 10f * acceleration * npcSpeed;
+                npcSpeedX += - acceleration * npcSpeed;
             }
             if (curTime > coolTime)
             {
@@ -88,7 +87,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
         {
             case NPCSTATE.IDLE:
                 mainTarget = null;
-                isDamaged = false;
+                hitCheck.isDamaged = false;
                 npcState = NPCSTATE.MOVE;
                 break;
             case NPCSTATE.MOVE:
@@ -170,7 +169,6 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 }
                 break;
             case NPCSTATE.EVASION:
-                isDamaged = true;
                 evasionCurTime += Time.deltaTime;                
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(evasionDirection), npcRotSpeed * Time.deltaTime);
                 if (evasionCurTime > evasionCoolTime)
@@ -181,9 +179,9 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 break;
             case NPCSTATE.DESTROY:                
                 npcSpeedX = npcSpeed;
-                if (!isDead)
+                if (!hitCheck.isDead)
                 {
-                    isDead = true;
+                    hitCheck.isDead = true;
                     StartCoroutine("NPCDie"); // 격추 시 일정 시간 비행 후 터지게 하기 위해 코루틴 사용.                    
                 }
                 break;

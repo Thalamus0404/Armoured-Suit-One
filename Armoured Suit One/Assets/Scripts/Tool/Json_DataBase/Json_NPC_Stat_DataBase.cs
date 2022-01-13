@@ -21,7 +21,7 @@ public class Json_NPC_Stat_DataBase : MonoBehaviour
             npc.hp = int.Parse(jsonNpcStat[i]["Hp"]);
             npc.shield = int.Parse(jsonNpcStat[i]["Shield"]);
             npc.armor = int.Parse(jsonNpcStat[i]["Armor"]);
-            npc.speed = int.Parse(jsonNpcStat[i]["Speed"]);
+            npc.speed = float.Parse(jsonNpcStat[i]["Speed"]);
             npcStat.Add(npc);
         }
     }

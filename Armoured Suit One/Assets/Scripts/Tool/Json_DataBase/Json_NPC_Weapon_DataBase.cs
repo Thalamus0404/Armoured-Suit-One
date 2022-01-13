@@ -18,7 +18,7 @@ public class Json_NPC_Weapon_DataBase : MonoBehaviour
             npc.index = int.Parse(jsonNpcWeapon[i]["Index"]);
             npc.objectName = jsonNpcWeapon[i]["Name"];
             npc.atk = int.Parse(jsonNpcWeapon[i]["ATK"]);
-            npc.speed = int.Parse(jsonNpcWeapon[i]["Speed"]);
+            npc.speed = float.Parse(jsonNpcWeapon[i]["Speed"]);
             npc.range = int.Parse(jsonNpcWeapon[i]["Range"]);
             npcWeapon.Add(npc);
         }

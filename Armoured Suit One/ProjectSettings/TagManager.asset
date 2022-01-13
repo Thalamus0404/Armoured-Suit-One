@@ -12,6 +12,8 @@ TagManager:
   - Ally Bullet
   - Enemy
   - Ally
+  - FxTemporaire
+  - Object
   layers:
   - Default
   - TransparentFX

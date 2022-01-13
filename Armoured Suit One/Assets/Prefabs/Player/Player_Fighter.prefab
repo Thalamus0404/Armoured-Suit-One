@@ -217,6 +217,22 @@ MonoBehaviour:
   maxflightBooster: 0
   maxflightEnergy: 0
   maxflightTrans: 0
+  weapon1Index: 0
+  weapon1Name: 
+  weapon1ATK: 0
+  weapon1Speed: 0
+  weapon1Range: 0
+  weapon1Energy: 0
+  weapon1Trans: 0
+  weapon1Charge: 0
+  weapon2Index: 0
+  weapon2Name: 
+  weapon2ATK: 0
+  weapon2Speed: 0
+  weapon2Range: 0
+  weapon2Energy: 0
+  weapon2Trans: 0
+  weapon2Charge: 0
 --- !u!114 &4969238213216101100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4969238213295079663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4969238213216101103}
@@ -425,6 +441,9 @@ MonoBehaviour:
   weaponCurTime: 0
   bulletSpeed: 50
   bulletDamage: 20
+  energyCost: 0
+  transCost: 0
+  charge: 0
   player: {fileID: 1329101093964562768}
   energyRegen: 1
 --- !u!1 &4969238214141622537
