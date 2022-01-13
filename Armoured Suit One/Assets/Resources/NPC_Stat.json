@@ -6,7 +6,7 @@
    "Hp": 1000,
    "Shield": 500,
    "Armor": 0,
-   "Speed": 1500
+   "Speed": 15
  },
  {
    "Index": 2,
@@ -15,7 +15,7 @@
    "Hp": 1000,
    "Shield": 500,
    "Armor": 50,
-   "Speed": 1000
+   "Speed": 10
  },
  {
    "Index": 3,
@@ -24,7 +24,7 @@
    "Hp": 1500,
    "Shield": 500,
    "Armor": 100,
-   "Speed": 750
+   "Speed": 8
  },
  {
    "Index": 4,
@@ -33,7 +33,7 @@
    "Hp": 2000,
    "Shield": 0,
    "Armor": 100,
-   "Speed": 500
+   "Speed": 8
  },
  {
    "Index": 5,
@@ -42,7 +42,7 @@
    "Hp": 10000,
    "Shield": 0,
    "Armor": 200,
-   "Speed": 200
+   "Speed": 5
  },
  {
    "Index": 6,
@@ -51,7 +51,7 @@
    "Hp": 20000,
    "Shield": 0,
    "Armor": 300,
-   "Speed": 100
+   "Speed": 3
  },
  {
    "Index": 7,
@@ -60,7 +60,7 @@
    "Hp": 50000,
    "Shield": 0,
    "Armor": 500,
-   "Speed": 50
+   "Speed": 2
  },
  {
    "Index": 8,
@@ -69,7 +69,7 @@
    "Hp": 50000,
    "Shield": 0,
    "Armor": 500,
-   "Speed": 50
+   "Speed": 2
  },
  {
    "Index": 9,

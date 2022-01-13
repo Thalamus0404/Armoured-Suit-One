@@ -1,0 +1,112 @@
+[
+ {
+   "Index": 1,
+   "Name": "EBU 50mm",
+   "ATK": 200,
+   "Speed": 3000,
+   "Range": 500,
+   "Energy": 50,
+   "Trans": 0,
+   "Charge": 0
+ },
+ {
+   "Index": 2,
+   "Name": "EBU 100mm",
+   "ATK": 400,
+   "Speed": 2500,
+   "Range": 500,
+   "Energy": 100,
+   "Trans": 0,
+   "Charge": 0
+ },
+ {
+   "Index": 3,
+   "Name": "EBU 150mm",
+   "ATK": 800,
+   "Speed": 2000,
+   "Range": 500,
+   "Energy": 200,
+   "Trans": 0,
+   "Charge": 0
+ },
+ {
+   "Index": 4,
+   "Name": "MG 8000",
+   "ATK": 50,
+   "Speed": 0,
+   "Range": 10,
+   "Energy": 0,
+   "Trans": 0,
+   "Charge": 8000
+ },
+ {
+   "Index": 5,
+   "Name": "GA Mk.1",
+   "ATK": 1000,
+   "Speed": 3000,
+   "Range": 1000,
+   "Energy": 0,
+   "Trans": 0,
+   "Charge": 40
+ },
+ {
+   "Index": 6,
+   "Name": "GA Mk.2",
+   "ATK": 1500,
+   "Speed": 2500,
+   "Range": 1000,
+   "Energy": 0,
+   "Trans": 0,
+   "Charge": 20
+ },
+ {
+   "Index": 7,
+   "Name": "GA Mk.3",
+   "ATK": 2000,
+   "Speed": 2000,
+   "Range": 1000,
+   "Energy": 0,
+   "Trans": 0,
+   "Charge": 10
+ },
+ {
+   "Index": 8,
+   "Name": "Orchestra",
+   "ATK": 1000,
+   "Speed": 3000,
+   "Range": 1000,
+   "Energy": 0,
+   "Trans": 0,
+   "Charge": 80
+ },
+ {
+   "Index": 9,
+   "Name": "Shield Buster",
+   "ATK": 5000,
+   "Speed": 2500,
+   "Range": 1000,
+   "Energy": 0,
+   "Trans": 0,
+   "Charge": 20
+ },
+ {
+   "Index": 10,
+   "Name": "Transform Bullet 1",
+   "ATK": 1000,
+   "Speed": 0,
+   "Range": 500,
+   "Energy": 0,
+   "Trans": 50,
+   "Charge": 0
+ },
+ {
+   "Index": 11,
+   "Name": "Transform Missale 1",
+   "ATK": 500,
+   "Speed": 3000,
+   "Range": 1000,
+   "Energy": 0,
+   "Trans": 100,
+   "Charge": 0
+ }
+]

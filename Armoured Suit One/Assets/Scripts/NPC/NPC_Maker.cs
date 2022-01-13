@@ -8,7 +8,7 @@ public class NPC_Maker : MonoBehaviour
     public GameObject[] npcPool;
     public int poolSize = 10;
 
-    public Json_DataBase dataBase;
+    public Json_NPC_Stat_DataBase stat_DataBase;
     public int index;
     public string objectName;
     public string objectType;
@@ -19,7 +19,7 @@ public class NPC_Maker : MonoBehaviour
 
     void Start()
     {
-        var npcStat = dataBase.npcStat[index];
+        var npcStat = stat_DataBase.npcStat[index];
         objectName = npcStat.name;
         objectType = npcStat.type;
         hp = npcStat.hp;
@@ -27,7 +27,7 @@ public class NPC_Maker : MonoBehaviour
         armor = npcStat.armor;
         speed = npcStat.speed;
 
-        NPC_Mgr npc = npcPrefab.GetComponentInChildren<NPC_Mgr>();
+        NPC_Mgr npc = npcPrefab.GetComponent<NPC_Mgr>();
         npc.index = index;
         npc.objectName = objectName;
         npc.objectType = objectType;
@@ -40,13 +40,15 @@ public class NPC_Maker : MonoBehaviour
         for (int i = 0; i < npcPool.Length; i += 2)
         {
             npcPool[i] = Instantiate(npcPrefab) as GameObject;
-            npcPool[i].transform.position = new Vector3(transform.position.x + i, transform.position.y, transform.position.z - i);            
+            npcPool[i].transform.position = new Vector3(transform.position.x + 2 * i, transform.position.y, transform.position.z - 2 * i);
+            npcPool[i].name = npcPrefab.tag + objectName + i;
             npcPool[i].SetActive(false);
         }
         for (int i = 1; i < npcPool.Length; i += 2)
         {
             npcPool[i] = Instantiate(npcPrefab) as GameObject;
-            npcPool[i].transform.position = new Vector3(transform.position.x - i - 1, transform.position.y, transform.position.z - i - 1);
+            npcPool[i].transform.position = new Vector3(transform.position.x - 2 * (i + 1), transform.position.y, transform.position.z - 2 * (i + 1));
+            npcPool[i].name = npcPrefab.tag + objectName + i;
             npcPool[i].SetActive(false);
         }
     }

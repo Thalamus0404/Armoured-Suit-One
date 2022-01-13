@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
 
-public class Json_DataBase : MonoBehaviour
+public class Json_NPC_Stat_DataBase : MonoBehaviour
 {
     public TextAsset jsonNpcStatText;
     public List<NPC_Stat> npcStat = new List<NPC_Stat>();

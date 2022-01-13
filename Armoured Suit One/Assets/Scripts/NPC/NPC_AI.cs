@@ -27,7 +27,8 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
 
     public Radar_Mgr radarMgr;
     public Front_Range_Check frontRangeCheck;
-    public NPC_Weapon_Mgr weaponMgr;    
+    public NPC_Weapon_Mgr weaponMgr;
+    public NPC_Mgr npc;
 
     public float stateCurTime;
     public float stateCoolTime = 5f;
@@ -40,6 +41,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
 
     public bool isCrashed = false;
     public bool isDead = false;
+    public bool isDamaged = false;
 
     public float curTime;
     public float coolTime = 1f;
@@ -51,7 +53,10 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
 
     void Start()
     {
-        moveDirection = Vector3.forward;        
+        moveDirection = Vector3.forward;
+        npc = GetComponent<NPC_Mgr>();
+        npcSpeed = npc.speed; // 데이터 베이스에서 가져온 데이터
+        npcSpeedX = npcSpeed;
     }
 
     void Update()
@@ -83,6 +88,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
         {
             case NPCSTATE.IDLE:
                 mainTarget = null;
+                isDamaged = false;
                 npcState = NPCSTATE.MOVE;
                 break;
             case NPCSTATE.MOVE:
@@ -164,6 +170,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 }
                 break;
             case NPCSTATE.EVASION:
+                isDamaged = true;
                 evasionCurTime += Time.deltaTime;                
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(evasionDirection), npcRotSpeed * Time.deltaTime);
                 if (evasionCurTime > evasionCoolTime)
@@ -176,8 +183,8 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 npcSpeedX = npcSpeed;
                 if (!isDead)
                 {
-                    StartCoroutine("NPCDie"); // 격추 시 일정 시간 비행 후 터지게 하기 위해 코루틴 사용.
                     isDead = true;
+                    StartCoroutine("NPCDie"); // 격추 시 일정 시간 비행 후 터지게 하기 위해 코루틴 사용.                    
                 }
                 break;
             default:

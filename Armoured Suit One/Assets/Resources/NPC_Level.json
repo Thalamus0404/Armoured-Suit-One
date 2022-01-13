@@ -1,0 +1,44 @@
+[
+ {
+   "Index": 1,
+   "Name": "Level 1",
+   "HpPer": 100,
+   "ShieldPer": 100,
+   "ArmorPer": 100
+ },
+ {
+   "Index": 2,
+   "Name": "Level 2",
+   "HpPer": 110,
+   "ShieldPer": 110,
+   "ArmorPer": 110
+ },
+ {
+   "Index": 3,
+   "Name": "Level 3",
+   "HpPer": 120,
+   "ShieldPer": 120,
+   "ArmorPer": 120
+ },
+ {
+   "Index": 4,
+   "Name": "Level 4",
+   "HpPer": 130,
+   "ShieldPer": 130,
+   "ArmorPer": 130
+ },
+ {
+   "Index": 5,
+   "Name": "Level 5",
+   "HpPer": 140,
+   "ShieldPer": 140,
+   "ArmorPer": 140
+ },
+ {
+   "Index": 6,
+   "Name": "Level 6",
+   "HpPer": 150,
+   "ShieldPer": 150,
+   "ArmorPer": 150
+ }
+]

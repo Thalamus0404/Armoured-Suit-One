@@ -1,0 +1,35 @@
+[
+ {
+   "Index": 1,
+   "Name": "Armored Suit",
+   "Hp": 1000,
+   "Shield": 500,
+   "Armor": 100,
+   "Speed": 10,
+   "Booster": 100,
+   "Energy": 1000,
+   "Trans": 1000
+ },
+ {
+   "Index": 2,
+   "Name": "APC Fighter",
+   "Hp": 1000,
+   "Shield": 500,
+   "Armor": 100,
+   "Speed": 10,
+   "Booster": 100,
+   "Energy": 1000,
+   "Trans": 0
+ },
+ {
+   "Index": 3,
+   "Name": "Interceptor",
+   "Hp": 1000,
+   "Shield": 500,
+   "Armor": 0,
+   "Speed": 15,
+   "Booster": 150,
+   "Energy": 1500,
+   "Trans": 0
+ }
+]

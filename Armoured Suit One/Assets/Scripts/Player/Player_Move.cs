@@ -7,7 +7,7 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
     public float speed = 10f;
     public float speedX;
     public float acceleration = 0.1f;
-    public float rotSpeed = 30f;
+    public float rotSpeed = 30f;  
 
     public Vector3 moveDirection;
 
@@ -15,10 +15,15 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
     public float coolTime = 1f;
 
     public bool isCrashed = false;
-    public GameObject booster;
+    public bool isBoosterOver = false;
+    public GameObject boosterEffect;
+
+    public Player_Mgr player;
 
     void Start()
     {
+        player = GetComponent<Player_Mgr>();
+        speed = player.flightSpeed;
         speedX = speed;
         moveDirection = Vector3.forward;
     }
@@ -36,7 +41,7 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
             curTime += Time.deltaTime;
             if (speedX >= 0)
             {
-                speedX += -10f * acceleration * speed;
+                speedX += -20f * acceleration * speed;
             }
             if (curTime > coolTime)
             {
@@ -50,14 +55,30 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
 
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.LeftShift) && !isCrashed)
         {
-            if (speedX <= 1.5f * speed)
+            if (speedX > 1.5f * speed)
+            {
+                speedX += -acceleration * speed;
+            }
+            else if (speedX <= 1.5f * speed)
             {
                 speedX += acceleration * speed;
             }
         }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !isCrashed)
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && isBoosterOver && !isCrashed)
         {
-            booster.SetActive(true);
+            if (speedX > 1.5f * speed)
+            {
+                speedX += -acceleration * speed;
+            }
+            else if (speedX <= 1.5f * speed)
+            {
+                speedX += acceleration * speed;
+            }
+        }
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !isCrashed && !isBoosterOver && player.flightBooster > 0)
+        {
+            player.flightBooster -= 1;
+            boosterEffect.SetActive(true);
             if (speedX <= 2f * speed)
             {
                 speedX += 2f * acceleration * speed;
@@ -65,7 +86,26 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
         }
         else
         {
-            booster.SetActive(false);
+            if (player.flightBooster < player.maxflightBooster)
+            {
+                isBoosterOver = true;
+            }
+            else
+            {
+                isBoosterOver = false;
+            }
+            boosterEffect.SetActive(false);
+        }
+        if (player.flightBooster < player.maxflightBooster)
+        {
+            if (isBoosterOver)
+            {
+                player.flightBooster += 1;
+            }
+        }
+        else
+        {
+            player.flightBooster = player.maxflightBooster;
         }
         if (Input.GetKey(KeyCode.S) && !isCrashed)
         {

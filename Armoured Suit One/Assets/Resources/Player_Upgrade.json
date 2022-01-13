@@ -1,0 +1,152 @@
+[
+ {
+   "Index": 1,
+   "Name": "Hp Up 1",
+   "Cost": 2000,
+   "HpUp": 200,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 2,
+   "Name": "Hp Up 2",
+   "Cost": 5000,
+   "HpUp": 300,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 3,
+   "Name": "Hp Up 3",
+   "Cost": 10000,
+   "HpUp": 500,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 4,
+   "Name": "Shield Up 1",
+   "Cost": 2000,
+   "HpUp": 0,
+   "ShieldUp": 100,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 5,
+   "Name": "Shield Up 2",
+   "Cost": 5000,
+   "HpUp": 0,
+   "ShieldUp": 150,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 6,
+   "Name": "Shield Up 3",
+   "Cost": 10000,
+   "HpUp": 0,
+   "ShieldUp": 250,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 7,
+   "Name": "Armor Up 1",
+   "Cost": 2000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 20,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 8,
+   "Name": "Armor Up 2",
+   "Cost": 5000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 30,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 9,
+   "Name": "Armor Up 3",
+   "Cost": 10000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 50,
+   "EnergyUp": 0,
+   "TransUp": 0
+ },
+ {
+   "Index": 10,
+   "Name": "Energy Up 1",
+   "Cost": 10000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 200,
+   "TransUp": 0
+ },
+ {
+   "Index": 11,
+   "Name": "Energy Up 2",
+   "Cost": 20000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 300,
+   "TransUp": 0
+ },
+ {
+   "Index": 12,
+   "Name": "Energy Up 3",
+   "Cost": 50000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 500,
+   "TransUp": 0
+ },
+ {
+   "Index": 13,
+   "Name": "Trans Up 1",
+   "Cost": 10000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 200
+ },
+ {
+   "Index": 14,
+   "Name": "Trans Up 2",
+   "Cost": 20000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 300
+ },
+ {
+   "Index": 15,
+   "Name": "Trans Up 3",
+   "Cost": 50000,
+   "HpUp": 0,
+   "ShieldUp": 0,
+   "ArmorUp": 0,
+   "EnergyUp": 0,
+   "TransUp": 500
+ }
+]
