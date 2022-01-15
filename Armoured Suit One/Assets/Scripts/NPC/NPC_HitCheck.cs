@@ -12,7 +12,7 @@ public class NPC_HitCheck : MonoBehaviour
     public float curTime;
     public float coolTime = 10f;
 
-    public int shieldRegen = 1;
+    public float shieldRegen = 100f;
 
     public bool isDamaged = false;
     public bool isDead = false;
@@ -156,7 +156,7 @@ public class NPC_HitCheck : MonoBehaviour
             isDamaged = false;
             if (npc.shield < npc.maxShield)
             {
-                npc.shield += shieldRegen;
+                npc.shield += (int)(shieldRegen * Time.deltaTime);
             }
             else
             {

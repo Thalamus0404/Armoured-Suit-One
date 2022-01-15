@@ -8,6 +8,7 @@ public class Player_Maker : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject player;
 
+    public GameObject dataBase;
     public Json_Player_Stat_DataBase stat_DataBase;
     public Json_Player_Weapon_DataBase weapon_DataBase;
 
@@ -42,6 +43,10 @@ public class Player_Maker : MonoBehaviour
 
     void Start()
     {
+        dataBase = GameObject.Find("Json_DataBase");
+        stat_DataBase = dataBase.GetComponent<Json_Player_Stat_DataBase>();
+        weapon_DataBase = dataBase.GetComponent<Json_Player_Weapon_DataBase>();
+
         var playerStat = stat_DataBase.playerStat[flightIndex];
         flightName = playerStat.objectName;
         flightHp = playerStat.hp;

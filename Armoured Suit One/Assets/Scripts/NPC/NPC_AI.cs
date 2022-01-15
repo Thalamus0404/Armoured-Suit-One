@@ -24,6 +24,8 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
     public float acceleration = 0.001f;
 
     public GameObject mainTarget;
+    public GameObject fallingEffect;
+    public GameObject deathEffect;
 
     public Radar_Mgr radarMgr;
     public Front_Range_Check frontRangeCheck;
@@ -171,6 +173,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
             case NPCSTATE.EVASION:
                 evasionCurTime += Time.deltaTime;                
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(evasionDirection), npcRotSpeed * Time.deltaTime);
+                npcSpeedX = 1.2f * npcSpeed;
                 if (evasionCurTime > evasionCoolTime)
                 {
                     evasionCurTime = 0;
@@ -178,7 +181,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 }
                 break;
             case NPCSTATE.DESTROY:                
-                npcSpeedX = npcSpeed;
+                npcSpeedX = 1.5f * npcSpeed;
                 if (!hitCheck.isDead)
                 {
                     hitCheck.isDead = true;
@@ -197,7 +200,9 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
 
     IEnumerator NPCDie()
     {
+        fallingEffect.SetActive(true);
         yield return new WaitForSeconds(deathTime);
+        Instantiate(deathEffect, transform.position, transform.rotation);
         gameObject.SetActive(false);
     }
 

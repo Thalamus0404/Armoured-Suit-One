@@ -6,7 +6,7 @@
    "Shield": 500,
    "Armor": 100,
    "Speed": 10,
-   "Booster": 2000,
+   "Booster": 1000,
    "Energy": 1000,
    "Trans": 1000
  },
@@ -17,7 +17,7 @@
    "Shield": 500,
    "Armor": 100,
    "Speed": 10,
-   "Booster": 2000,
+   "Booster": 1000,
    "Energy": 1000,
    "Trans": 0
  },
@@ -28,7 +28,7 @@
    "Shield": 500,
    "Armor": 0,
    "Speed": 15,
-   "Booster": 3000,
+   "Booster": 1500,
    "Energy": 1500,
    "Trans": 0
  }

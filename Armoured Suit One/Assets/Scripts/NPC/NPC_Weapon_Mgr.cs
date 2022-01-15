@@ -17,10 +17,17 @@ public class NPC_Weapon_Mgr : MonoBehaviour
     public int bulletDamage;
 
     public GameObject main;
+    public NPC_Mgr npc;
+
+    public AudioClip gunSound;
+    public AudioSource audioSource;
 
     void Start()
     {
         weapon = bulletPrefab1;
+        npc = main.GetComponent<NPC_Mgr>();
+        bulletSpeed = npc.weapon1Speed;
+        bulletDamage = npc.weapon1ATK;
     }
 
     void Update()
@@ -35,6 +42,7 @@ public class NPC_Weapon_Mgr : MonoBehaviour
     {
         if (fireCurTime >= fireCoolTime && mainTarget != null)
         {
+            audioSource.PlayOneShot(gunSound);
             Vector3 dir = mainTarget.transform.position - firePosition.transform.position;
             dir.Normalize();
             GameObject bullet = Instantiate(weapon, firePosition.transform.position, Quaternion.LookRotation(dir)) as GameObject;

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &57274965356503559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57274965356503561}
+  - component: {fileID: 57274965356503558}
+  m_Layer: 0
+  m_Name: Ally_Maker
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &57274965356503561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57274965356503559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57274965356503558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57274965356503559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e10940c8ade35d4aa6a1823ef414318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 7340127068524937787, guid: e7ba0bac6a0e67442b80fdcf3a3403a7, type: 3}
+  npcPool: []
+  poolSize: 9
+  stat_DataBase: {fileID: 0}
+  weapon_DataBase: {fileID: 0}
+  index: 1
+  weapon1Index: 0
+  weapon2Index: 0
+  objectName: 
+  objectType: 
+  hp: 0
+  shield: 0
+  armor: 0
+  speed: 0
+  weapon1Name: 
+  weapon1ATK: 0
+  weapon1Speed: 0
+  weapon1Range: 0
+  weapon2Name: 
+  weapon2ATK: 0
+  weapon2Speed: 0
+  weapon2Range: 0

@@ -8,6 +8,7 @@ public class NPC_Maker : MonoBehaviour
     public GameObject[] npcPool;
     public int poolSize = 10;
 
+    public GameObject dataBase;
     public Json_NPC_Stat_DataBase stat_DataBase;
     public Json_NPC_Weapon_DataBase weapon_DataBase;
 
@@ -34,6 +35,9 @@ public class NPC_Maker : MonoBehaviour
 
     void Start()
     {
+        dataBase = GameObject.Find("Json_DataBase");
+        stat_DataBase = dataBase.GetComponent<Json_NPC_Stat_DataBase>();
+        weapon_DataBase = dataBase.GetComponent<Json_NPC_Weapon_DataBase>();
         var npcStat = stat_DataBase.npcStat[index];
         objectName = npcStat.name;
         objectType = npcStat.type;

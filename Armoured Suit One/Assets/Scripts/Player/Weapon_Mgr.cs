@@ -23,10 +23,14 @@ public class Weapon_Mgr : MonoBehaviour
 
     public Player_Mgr player;
 
-    public int energyRegen = 1;
+    public int energyRegen = 100;
+
+    public AudioClip gunSound;
+    public AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponentInParent<AudioSource>();
         weapon = bulletPrefab1;
         bulletSpeed = player.weapon1Speed;
         bulletDamage = player.weapon1ATK;
@@ -64,6 +68,7 @@ public class Weapon_Mgr : MonoBehaviour
         {
             weaponCurTime = 0;
             player.flightEnergy -= energyCost;
+            audioSource.PlayOneShot(gunSound);
             GameObject bullet = Instantiate(weapon, firePosition.transform.position, firePosition.transform.rotation) as GameObject;
             bullet.tag = "Player Bullet";
             bullet_Mgr = bullet.GetComponent<Bullet_Mgr>();
@@ -115,7 +120,7 @@ public class Weapon_Mgr : MonoBehaviour
     {
         if(player.flightEnergy < player.maxflightEnergy)
         {
-            player.flightEnergy += energyRegen;
+            player.flightEnergy += (int)(energyRegen * Time.deltaTime);
         }
         else
         {

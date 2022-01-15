@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &651861541088507656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651861541088507658}
+  - component: {fileID: 651861541088507633}
+  - component: {fileID: 651861541088507662}
+  - component: {fileID: 651861541088507663}
+  - component: {fileID: 651861541088507660}
+  - component: {fileID: 651861541088507661}
+  - component: {fileID: 651861541088507659}
+  m_Layer: 0
+  m_Name: Json_DataBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &651861541088507658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &651861541088507633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfeba86e6196efa478de24cb05bcc684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonNpcStatText: {fileID: 4900000, guid: 86952c404c6601f4a8d9e11f7003c67e, type: 3}
+  npcStat: []
+--- !u!114 &651861541088507662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac50f4a513b9ef54e954961445b4d0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonNPCLevelText: {fileID: 4900000, guid: 9d258fc7257c201489bb56f6eedfd00c, type: 3}
+  npcLevel: []
+--- !u!114 &651861541088507663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56258c1d830081449b0697390092f730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonNPCWeaponText: {fileID: 4900000, guid: 2ef4733b1697a2c49b244608ff40af17, type: 3}
+  npcWeapon: []
+--- !u!114 &651861541088507660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170f88f57f6aa514fb442eb3e050a479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonPlayerStatText: {fileID: 4900000, guid: 4dd417ceaec37ec4b9731c2dfd4a1875, type: 3}
+  playerStat: []
+--- !u!114 &651861541088507661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9427ba35e35ebe4ea5d5cde1426570f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonPlayerUpgradeText: {fileID: 4900000, guid: ee47371d2d955a944b9eb6b1db12468e, type: 3}
+  playerUpgrade: []
+--- !u!114 &651861541088507659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651861541088507656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b0a966739692f45810574306f72ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonPlayerWeaponText: {fileID: 4900000, guid: 79bb5162266ad764ea3650428b08d84f, type: 3}
+  playerWeapon: []

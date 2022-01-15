@@ -13,10 +13,14 @@ public class Player_HitCheck : MonoBehaviour
     public float curTime;
     public float coolTime = 10f;
 
-    public int shieldRegen = 1;
+    public int shieldRegen = 200;
+
+    public AudioClip hitSound;
+    public AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponentInParent<AudioSource>();
         player = main.GetComponent<Player_Mgr>();
     }
 
@@ -33,6 +37,7 @@ public class Player_HitCheck : MonoBehaviour
                 break;
             case "Enemy Bullet":
                 curTime = 0;
+                audioSource.PlayOneShot(hitSound);
                 Destroy(other);
                 isDamaged = true;                
                 if (player.flightShield > 0)
@@ -61,6 +66,10 @@ public class Player_HitCheck : MonoBehaviour
             player.flightHp = 0;
             isDead = true;
         }
+        if(player.flightShield < 0)
+        {
+            player.flightShield = 0;
+        }
     }
 
     public void ShieldRecharge()
@@ -74,7 +83,7 @@ public class Player_HitCheck : MonoBehaviour
             isDamaged = false;
             if(player.flightShield < player.maxflightShield)
             {
-                player.flightShield += shieldRegen;
+                player.flightShield += (int)(shieldRegen * Time.deltaTime);
             }
             else
             {

@@ -7,7 +7,8 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
     public float speed = 10f;
     public float speedX;
     public float acceleration = 0.1f;
-    public float rotSpeed = 30f;  
+    public float rotSpeed = 30f;
+    public float busterRegen = 100f;
 
     public Vector3 moveDirection;
 
@@ -19,10 +20,12 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
     public GameObject boosterEffect;
 
     public Player_Mgr player;
+    public GameObject boosterOverText;
 
     void Start()
     {
         player = GetComponent<Player_Mgr>();
+        boosterOverText = GameObject.Find("BoosterOverText");
         speed = player.flightSpeed;
         speedX = speed;
         moveDirection = Vector3.forward;
@@ -55,6 +58,8 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
 
         if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.LeftShift) && !isCrashed)
         {
+            var emission = boosterEffect.GetComponent<ParticleSystem>().emission;
+            emission.rateOverTime = 60f;
             if (speedX > 1.5f * speed)
             {
                 speedX += -acceleration * speed;
@@ -66,6 +71,8 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && isBoosterOver && !isCrashed)
         {
+            var emission = boosterEffect.GetComponent<ParticleSystem>().emission;
+            emission.rateOverTime = 60f;
             if (speedX > 1.5f * speed)
             {
                 speedX += -acceleration * speed;
@@ -77,8 +84,9 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
         }
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !isCrashed && !isBoosterOver && player.flightBooster > 0)
         {
-            player.flightBooster -= 1;
-            boosterEffect.SetActive(true);
+            var emission = boosterEffect.GetComponent<ParticleSystem>().emission;
+            emission.rateOverTime = 120f;
+            player.flightBooster -= 1;            
             if (speedX <= 2f * speed)
             {
                 speedX += 2f * acceleration * speed;
@@ -89,18 +97,19 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
             if (player.flightBooster < player.maxflightBooster)
             {
                 isBoosterOver = true;
+                boosterOverText.SetActive(true);
             }
             else
             {
                 isBoosterOver = false;
+                boosterOverText.SetActive(false);
             }
-            boosterEffect.SetActive(false);
         }
         if (player.flightBooster < player.maxflightBooster)
         {
             if (isBoosterOver)
             {
-                player.flightBooster += 1;
+                player.flightBooster += (int)(busterRegen * Time.deltaTime);
             }
         }
         else
@@ -128,6 +137,8 @@ public class Player_Move : MonoBehaviour // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿°ú Ãæµ¹ ½Ã ¹ÝÀÛ¿ë ±âÀ
     {
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
+            var emission = boosterEffect.GetComponent<ParticleSystem>().emission;
+            emission.rateOverTime = 30f;
             if (speedX > speed)
             {
                 speedX += -acceleration * speed;
