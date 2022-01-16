@@ -87,7 +87,7 @@ public class Weapon_Mgr : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1) && player.weapon2Charge > 0)
         {
             if (aimTime <= missaleAimTime && aimTarget != null && aimTarget.tag == "Enemy")
             {

@@ -8,6 +8,7 @@ public class Scene_Change_Mgr : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
     }
 
     //public void GoMainPage()
