@@ -82,6 +82,7 @@ MonoBehaviour:
   bulletSpeed: 100
   bulletDamage: 300
   main: {fileID: 1265342110281619184}
+  npc: {fileID: 0}
   gunSound: {fileID: 8300000, guid: 4d29a4a99a9c8d44f9a61771051a7ac2, type: 3}
   audioSource: {fileID: 39947647925204390}
 --- !u!1 &1265342110209881340
@@ -129,6 +130,7 @@ GameObject:
   - component: {fileID: 740939211352957451}
   - component: {fileID: 740939211352957450}
   - component: {fileID: 39947647925204390}
+  - component: {fileID: 3808380319982456894}
   m_Layer: 0
   m_Name: Enemy_Fighter
   m_TagString: Enemy
@@ -231,15 +233,15 @@ MonoBehaviour:
   shield: 500
   armor: 50
   speed: 10
-  weapon1Index: 1
-  weapon1Name: NPC Heavy Bullet
-  weapon1ATK: 300
-  weapon1Speed: 50
+  weapon1Index: 0
+  weapon1Name: NPC Bullet
+  weapon1ATK: 150
+  weapon1Speed: 100
   weapon1Range: 500
   weapon2Index: 1
   weapon2Name: NPC Heavy Bullet
   weapon2ATK: 300
-  weapon2Speed: 50
+  weapon2Speed: 100
   weapon2Range: 500
   maxHp: 0
   maxShield: 0
@@ -368,7 +370,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -453,6 +455,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3808380319982456894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265342110281619184}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  needBoxIndicator: 1
+  needArrowIndicator: 1
+  needDistanceText: 0
+  indicator: {fileID: 0}
 --- !u!1 &1265342110368060980
 GameObject:
   m_ObjectHideFlags: 0

@@ -246,6 +246,7 @@ MonoBehaviour:
   bulletSpeed: 100
   bulletDamage: 300
   main: {fileID: 7340127068524937787}
+  npc: {fileID: 0}
   gunSound: {fileID: 8300000, guid: d35f2187dfe433744b951c6c49fc5c70, type: 3}
   audioSource: {fileID: 7575258590767890434}
 --- !u!1 &7340127067493510236
@@ -452,6 +453,7 @@ GameObject:
   - component: {fileID: 739922615}
   - component: {fileID: 739922612}
   - component: {fileID: 7575258590767890434}
+  - component: {fileID: 7565741606713781225}
   m_Layer: 0
   m_Name: Ally_Fighter
   m_TagString: Ally
@@ -556,12 +558,12 @@ MonoBehaviour:
   weapon1Index: 0
   weapon1Name: NPC Bullet
   weapon1ATK: 150
-  weapon1Speed: 50
+  weapon1Speed: 100
   weapon1Range: 500
-  weapon2Index: 0
-  weapon2Name: NPC Bullet
-  weapon2ATK: 150
-  weapon2Speed: 50
+  weapon2Index: 3
+  weapon2Name: NPC Flak
+  weapon2ATK: 200
+  weapon2Speed: 0
   weapon2Range: 500
   maxHp: 0
   maxShield: 0
@@ -775,6 +777,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7565741606713781225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7340127068524937787}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 0.3803922, g: 0.8078432, b: 0.8196079, a: 1}
+  needBoxIndicator: 0
+  needArrowIndicator: 1
+  needDistanceText: 0
+  indicator: {fileID: 0}
 --- !u!1 &7340127068540719900
 GameObject:
   m_ObjectHideFlags: 0
