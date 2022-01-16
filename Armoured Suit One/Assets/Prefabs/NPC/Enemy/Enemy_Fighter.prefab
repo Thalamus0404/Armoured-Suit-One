@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265342109159828674}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265342109903848357}
   - component: {fileID: 1265342109903848345}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WeaponMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265342110209881343}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 740939211352957451}
   - component: {fileID: 740939211352957450}
   - component: {fileID: 39947647925204390}
-  - component: {fileID: 3808380319982456894}
+  - component: {fileID: 1967785747241956601}
   m_Layer: 0
   m_Name: Enemy_Fighter
   m_TagString: Enemy
@@ -455,7 +455,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3808380319982456894
+--- !u!114 &1967785747241956601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  targetColor: {r: 0.81568635, g: 0.20392159, b: 0.20392159, a: 1}
   needBoxIndicator: 1
   needArrowIndicator: 1
   needDistanceText: 0
@@ -481,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265342110368060983}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flight_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 2402857138889217156}
   - component: {fileID: 2387163137879101444}
   - component: {fileID: 2378583529212860404}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretSwiwelMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 2403189165362697144}
   - component: {fileID: 2387065412823049838}
   - component: {fileID: 2379218581479855996}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GunRail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 2397645914867154620}
   - component: {fileID: 2391212805106200854}
   - component: {fileID: 2379042195468247304}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretMediumRail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 2885856785279543498}
   - component: {fileID: 2885856785279543503}
   - component: {fileID: 2885856785279543502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrontRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 3732255715304239810}
   - component: {fileID: 3732255715304239809}
   - component: {fileID: 3732255715304239822}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Radar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4215893101950599219}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Socket_TurretR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 4224098158608879859}
   - component: {fileID: 4244497022324966435}
   - component: {fileID: 4234924869081654991}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tannhauser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4215719572216905579}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Socket_TurretL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 6115892519470003498}
   - component: {fileID: 6091521977209633408}
   - component: {fileID: 6098485034562628254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretMediumRail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 6124880402825484334}
   - component: {fileID: 6090743351250300408}
   - component: {fileID: 6098589849188916458}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GunRail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1322,7 @@ GameObject:
   - component: {fileID: 6124486750013759250}
   - component: {fileID: 6090781700413463442}
   - component: {fileID: 6099079545812098146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretSwiwelMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1405,7 +1405,7 @@ GameObject:
   - component: {fileID: 7217370691561494091}
   - component: {fileID: 7217370691561494085}
   - component: {fileID: 7217370691561494087}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HitCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1503,6 +1503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster(Red)
       objectReference: {fileID: 0}
+    - target: {fileID: 8593426659169296759, guid: 8a775e6edd1cda94d8ba595548e38939, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8593426659169795415, guid: 8a775e6edd1cda94d8ba595548e38939, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1570,8 +1574,16 @@ PrefabInstance:
       value: Smoke
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
       propertyPath: m_RootOrder
@@ -1663,6 +1675,10 @@ PrefabInstance:
     - target: {fileID: 8593426659169296759, guid: 8a775e6edd1cda94d8ba595548e38939, type: 3}
       propertyPath: m_Name
       value: Booster(Red) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593426659169296759, guid: 8a775e6edd1cda94d8ba595548e38939, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8593426659169795415, guid: 8a775e6edd1cda94d8ba595548e38939, type: 3}
       propertyPath: m_RootOrder

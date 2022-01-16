@@ -27,6 +27,15 @@ public class Player_HitCheck : MonoBehaviour
     void Update()
     {
         ShieldRecharge();
+        if (player.flightHp <= 0 && !isDead)
+        {
+            player.flightHp = 0;
+            isDead = true;
+        }
+        if (player.flightShield < 0)
+        {
+            player.flightShield = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,19 +65,9 @@ public class Player_HitCheck : MonoBehaviour
                 }
                 break;        
             case "Ally Bullet":
-                Destroy(other);
                 break;
             default:
                 break;
-        }
-        if (player.flightHp <= 0 && !isDead)
-        {
-            player.flightHp = 0;
-            isDead = true;
-        }
-        if(player.flightShield < 0)
-        {
-            player.flightShield = 0;
         }
     }
 

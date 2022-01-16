@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4964880127767545059}
   - component: {fileID: 4939937998592410845}
   - component: {fileID: 4946148492163152957}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player_Fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4969238213139096100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flight_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4453544978377099479}
   - component: {fileID: 1081274388145634997}
   - component: {fileID: 7579979778433334112}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player_Fighter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -215,25 +215,25 @@ MonoBehaviour:
   flightSpeed: 10
   flightBooster: 1000
   flightEnergy: 1000
-  flightTrans: 1000
-  maxflightHp: 0
-  maxflightShield: 0
-  maxflightBooster: 0
-  maxflightEnergy: 0
-  maxflightTrans: 0
+  flightTrans: 0
+  maxflightHp: 1000
+  maxflightShield: 500
+  maxflightBooster: 1000
+  maxflightEnergy: 1000
+  maxflightTrans: 1000
   weapon1Index: 0
   weapon1Name: EBU 50mm
   weapon1ATK: 200
-  weapon1Speed: 50
+  weapon1Speed: 100
   weapon1Range: 500
   weapon1Energy: 75
   weapon1Trans: 0
   weapon1Charge: 0
-  weapon2Index: 5
+  weapon2Index: 4
   weapon2Name: GA Mk.2
   weapon2ATK: 1500
-  weapon2Speed: 50
-  weapon2Range: 1000
+  weapon2Speed: 20
+  weapon2Range: 200
   weapon2Energy: 0
   weapon2Trans: 0
   weapon2Charge: 20
@@ -243,6 +243,10 @@ MonoBehaviour:
   energySlider: {fileID: 0}
   boosterSlider: {fileID: 0}
   energyCircle: {fileID: 0}
+  bulletWeaponText: {fileID: 0}
+  bulletChargeText: {fileID: 0}
+  missaleWeaponText: {fileID: 0}
+  missaleChargeText: {fileID: 0}
 --- !u!114 &4969238213216101100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4969238213295079660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +519,7 @@ GameObject:
   - component: {fileID: 4969238213526730678}
   - component: {fileID: 4969238213526730679}
   - component: {fileID: 856694033118310598}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WeaponMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,20 +553,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  bulletPrefab1: {fileID: 908062274198558465, guid: 9345ae3cb342a5846b7b296d6767a2a2, type: 3}
-  bulletPrefab2: {fileID: 908062274198558465, guid: 7a9b7f3069d5246418507f202d9b0638, type: 3}
+  bulletPrefab: {fileID: 908062274198558465, guid: 9345ae3cb342a5846b7b296d6767a2a2, type: 3}
+  missalePrefab: {fileID: 908062274198558465, guid: f4fbd1f25d1df904481e398856f10f04, type: 3}
   firePosition: {fileID: 4969238213295079660}
-  weaponCoolTime: 0.2
-  weaponCurTime: 0
+  mouse100Z: {x: 0, y: 0, z: 0}
+  bulletCoolTime: 0.2
+  bulletCurTime: 0
   bulletSpeed: 50
   bulletDamage: 20
   energyCost: 0
   transCost: 0
-  charge: 0
+  bulletCharge: 0
+  missaleSpeed: 0
+  missaleDamage: 0
+  missaleCharge: 0
+  missaleAimTime: 1.5
+  missaleRange: 100
   player: {fileID: 1329101093964562768}
   energyRegen: 200
   gunSound: {fileID: 8300000, guid: d35f2187dfe433744b951c6c49fc5c70, type: 3}
+  missaleSound: {fileID: 8300000, guid: 6d955e5c8c6fe764ca5d5fd0dc5f34d2, type: 3}
   audioSource: {fileID: 0}
+  aimSound: {fileID: 8300000, guid: d557d0be8a8d6f14d9a19eb39f67b2ba, type: 3}
+  lockOnTarget: {fileID: 0}
+  aimTarget: {fileID: 0}
+  aimTime: 0
 --- !u!82 &856694033118310598
 AudioSource:
   m_ObjectHideFlags: 0
@@ -670,7 +685,7 @@ GameObject:
   - component: {fileID: 4969238214141622580}
   - component: {fileID: 4969238214141622583}
   - component: {fileID: 7178435291668672236}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -760,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4969238214255921317}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RadarMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +808,7 @@ GameObject:
   - component: {fileID: 4453544977803475592}
   - component: {fileID: 2759026103702838402}
   - component: {fileID: 8734850620933551069}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HitCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,6 +933,10 @@ PrefabInstance:
     - target: {fileID: 4027938013344377570, guid: 4933c80ac4e369f47b4093c5a7b201f8, type: 3}
       propertyPath: m_Name
       value: Booster(Blue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027938013344377570, guid: 4933c80ac4e369f47b4093c5a7b201f8, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4933c80ac4e369f47b4093c5a7b201f8, type: 3}

@@ -546,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Json_DataBase
       objectReference: {fileID: 0}
+    - target: {fileID: 651861541088507656, guid: 6bafc7b4842b4f649be8ff0eff4f905c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 651861541088507658, guid: 6bafc7b4842b4f649be8ff0eff4f905c, type: 3}
       propertyPath: m_RootOrder
       value: 2

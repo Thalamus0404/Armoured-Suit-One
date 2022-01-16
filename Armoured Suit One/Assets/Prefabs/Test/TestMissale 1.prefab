@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 908062274198558476}
   - component: {fileID: 908062274198558479}
   - component: {fileID: 908062274198558478}
-  - component: {fileID: -964115841523839536}
-  - component: {fileID: -2920474413697831185}
+  - component: {fileID: 4193938190215385450}
+  - component: {fileID: 1096938209502501116}
   m_Layer: 0
-  m_Name: TestBullet 2
-  m_TagString: Weapon 2
+  m_Name: TestMissale 1
+  m_TagString: Weapon 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 63a21b3a7eb215343bbd910d5556a833, type: 2}
+  - {fileID: 2100000, guid: 93d604fdec86c6548bab69a4a0a01d06, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,26 +97,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-964115841523839536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908062274198558465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa158455f15e71842801bc126f75b408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 0
-  bulletSpeedX: 0
-  missaleRotSpeed: 5
-  bulletDamage: 0
-  bulletEffect: {fileID: 100006, guid: cc50cf38aee16ad4c8dd52ccda2dba44, type: 3}
-  mainTarget: {fileID: 0}
-  moveDirection: {x: 0, y: 0, z: 0}
---- !u!96 &-2920474413697831185
+--- !u!96 &4193938190215385450
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -178,7 +159,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.78431374, g: 0.13725491, b: 0.13725491, a: 1}
+      key0: {r: 1, g: 0.59658235, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -214,3 +195,22 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &1096938209502501116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908062274198558465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa158455f15e71842801bc126f75b408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 20
+  bulletSpeedX: 0
+  missaleRotSpeed: 3
+  bulletDamage: 1500
+  bulletEffect: {fileID: 100006, guid: cc50cf38aee16ad4c8dd52ccda2dba44, type: 3}
+  mainTarget: {fileID: 0}
+  moveDirection: {x: 0, y: 0, z: 0}

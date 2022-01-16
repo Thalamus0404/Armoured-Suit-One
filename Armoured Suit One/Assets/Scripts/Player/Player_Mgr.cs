@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Mgr : MonoBehaviour
 {
@@ -44,6 +45,10 @@ public class Player_Mgr : MonoBehaviour
     public Slider_Mgr energySlider;
     public Slider_Mgr boosterSlider;
     public Cursor_Enegy_Circle energyCircle;
+    public Text bulletWeaponText;
+    public Text bulletChargeText;
+    public Text missaleWeaponText;
+    public Text missaleChargeText;
 
     void Start()
     {
@@ -59,6 +64,14 @@ public class Player_Mgr : MonoBehaviour
         energySlider = GameObject.Find("EnergySlider").GetComponent<Slider_Mgr>();
         boosterSlider = GameObject.Find("BoosterSlider").GetComponent<Slider_Mgr>();
         energyCircle = GameObject.Find("EnergyCircle").GetComponent<Cursor_Enegy_Circle>();
+        bulletWeaponText = GameObject.Find("BulletText").GetComponent<Text>();
+        bulletChargeText = GameObject.Find("BulletChargeText").GetComponent<Text>();
+        missaleWeaponText = GameObject.Find("MissaleText").GetComponent<Text>();
+        missaleChargeText = GameObject.Find("MissaleChargeText").GetComponent<Text>();
+        bulletWeaponText.text = "[ 01 ]" + weapon1Name;
+        bulletChargeText.text = "";
+        missaleWeaponText.text = "[ 01 ]" + weapon2Name;
+        missaleChargeText.text = weapon2Charge.ToString();
     }
 
     void Update()
@@ -75,5 +88,6 @@ public class Player_Mgr : MonoBehaviour
         boosterSlider.maxStatX = maxflightBooster;
         energyCircle.statX = flightEnergy;
         energyCircle.maxStatX = maxflightEnergy;
+        missaleChargeText.text = weapon2Charge.ToString();
     }
 }

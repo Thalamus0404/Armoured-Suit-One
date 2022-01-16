@@ -106,6 +106,6 @@ public class Player_Maker : MonoBehaviour
 
         this.player = Instantiate(playerPrefab) as GameObject;
         this.player.name = this.player.tag + flightName;
-        this.player.SetActive(false);
+        //this.player.SetActive(false);
     }
 }

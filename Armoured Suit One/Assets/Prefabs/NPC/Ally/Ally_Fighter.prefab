@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1406986251837204743}
   - component: {fileID: 1406986251837204745}
   - component: {fileID: 1406986251837204747}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HitCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3044975655077355816}
   - component: {fileID: 3037975356690407702}
   - component: {fileID: 3027297233509145078}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ally_Fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7340127067014268289}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7340127067386561604}
   - component: {fileID: 7340127067386561603}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WeaponMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7340127067493510237}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flight_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 7340127067668846513}
   - component: {fileID: 7340127067668846527}
   - component: {fileID: 7340127067668846512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrontRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7340127067725567037}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 739922615}
   - component: {fileID: 739922612}
   - component: {fileID: 7575258590767890434}
-  - component: {fileID: 7565741606713781225}
+  - component: {fileID: 8114682806065493328}
   m_Layer: 0
   m_Name: Ally_Fighter
   m_TagString: Ally
@@ -777,7 +777,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7565741606713781225
+--- !u!114 &8114682806065493328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -790,9 +790,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0.3803922, g: 0.8078432, b: 0.8196079, a: 1}
-  needBoxIndicator: 0
+  needBoxIndicator: 1
   needArrowIndicator: 1
-  needDistanceText: 0
+  needDistanceText: 1
   indicator: {fileID: 0}
 --- !u!1 &7340127068540719900
 GameObject:
@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 7340127068540719903}
   - component: {fileID: 7340127068540719901}
   - component: {fileID: 7340127068540719902}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Radar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,6 +976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster(Blue)
       objectReference: {fileID: 0}
+    - target: {fileID: 4027938013344377570, guid: 4933c80ac4e369f47b4093c5a7b201f8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4027938013358109570, guid: 4933c80ac4e369f47b4093c5a7b201f8, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 60
@@ -1047,8 +1051,16 @@ PrefabInstance:
       value: Smoke
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1fa8f007bbad2e345a0bb270fa25b657, type: 3}
       propertyPath: m_RootOrder

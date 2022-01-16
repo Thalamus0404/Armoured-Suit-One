@@ -85,14 +85,14 @@ public class NPC_Maker : MonoBehaviour
             npcPool[i] = Instantiate(npcPrefab) as GameObject;
             npcPool[i].transform.position = new Vector3(transform.position.x + 2 * i, transform.position.y, transform.position.z - 2 * i);
             npcPool[i].name = npcPrefab.tag + objectName + i;
-            npcPool[i].SetActive(false);
+            npcPool[i].SetActive(true);
         }
         for (int i = 1; i < npcPool.Length; i += 2)
         {
             npcPool[i] = Instantiate(npcPrefab) as GameObject;
             npcPool[i].transform.position = new Vector3(transform.position.x - 2 * (i + 1), transform.position.y, transform.position.z - 2 * (i + 1));
             npcPool[i].name = npcPrefab.tag + objectName + i;
-            npcPool[i].SetActive(false);
+            npcPool[i].SetActive(true);
         }
     }
 }
