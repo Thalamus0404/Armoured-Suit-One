@@ -55,7 +55,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
     void Start()
     {
         moveDirection = Vector3.forward;
-        npc = GetComponent<NPC_Mgr>();
+        npc = GetComponent<NPC_Mgr>();        
         npcSpeed = npc.speed; // 데이터 베이스에서 가져온 데이터
         npcSpeedX = npcSpeed;
     }
@@ -184,7 +184,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
                 npcSpeedX = 1.5f * npcSpeed;
                 if (!hitCheck.isDead)
                 {
-                    hitCheck.isDead = true;
+                    hitCheck.isDead = true;                    
                     StartCoroutine("NPCDie"); // 격추 시 일정 시간 비행 후 터지게 하기 위해 코루틴 사용.                    
                 }
                 break;
@@ -199,7 +199,7 @@ public class NPC_AI : MonoBehaviour // NPC의 상태 및 행동을 결정함
     }
 
     IEnumerator NPCDie()
-    {
+    {        
         fallingEffect.SetActive(true);
         yield return new WaitForSeconds(deathTime);
         Instantiate(deathEffect, transform.position, transform.rotation);

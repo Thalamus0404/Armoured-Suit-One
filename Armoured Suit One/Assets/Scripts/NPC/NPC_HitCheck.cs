@@ -17,11 +17,14 @@ public class NPC_HitCheck : MonoBehaviour
     public bool isDamaged = false;
     public bool isDead = false;
 
+    public EnemyCounter counter;
+
     void Start()
     {
         ai = main.GetComponent<NPC_AI>();
         npc = main.GetComponent<NPC_Mgr>();
         StartCoroutine("MakeRndDirection");
+        counter = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
     }
 
     void Update()
@@ -117,6 +120,10 @@ public class NPC_HitCheck : MonoBehaviour
         if (npc.hp <= 0 && !isDead)
         {
             npc.hp = 0;
+            if (main.tag == "Enemy")
+            {
+                counter.count--;
+            }
             ai.npcState = NPC_AI.NPCSTATE.DESTROY;
         }
     }

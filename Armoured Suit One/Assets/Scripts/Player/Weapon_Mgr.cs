@@ -103,12 +103,34 @@ public class Weapon_Mgr : MonoBehaviour
             }
             aimTime = 0;
         }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            LockOn();
+        }
         //if (Input.GetKeyDown(KeyCode.C))
         //{
         //    WeaponSwap();
         //}
 
         EnergyRecharge();
+    }
+
+    public void LockOn()
+    {
+        if(lockOnTarget != null)
+        {
+            lockOnTarget = null;
+        }        
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out hit);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+        {
+            lockOnTarget = hit.collider.gameObject;
+            lockOnTarget.GetComponent<Target>().enabled = true;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(lockOnTarget.transform.position);
+
+        }
     }
 
     public void BulletFire()
@@ -150,7 +172,6 @@ public class Weapon_Mgr : MonoBehaviour
         if (distance < missaleRange)
         {
             aimTarget = hit.collider.gameObject;
-            aimTarget.GetComponent<Target>().enabled = true;
             audioSource.PlayOneShot(aimSound);
         }
     }
@@ -166,7 +187,6 @@ public class Weapon_Mgr : MonoBehaviour
         bullet_Mgr.bulletDamage = missaleDamage;        
         audioSource.PlayOneShot(missaleSound);
         Destroy(missale, 10f);
-        aimTarget.GetComponent<Target>().enabled = false;
     }
     //public void WeaponSwap()
     //{
@@ -213,6 +233,6 @@ public class Weapon_Mgr : MonoBehaviour
         var y = Input.mousePosition.y;
         float z = 100f;
         mouse100Z = Camera.main.ScreenToWorldPoint(new Vector3(x, y, z));
-        Debug.Log(mouse100Z);
+        //Debug.Log(mouse100Z);
     }
 }
