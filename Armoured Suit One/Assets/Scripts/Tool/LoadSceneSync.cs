@@ -33,7 +33,7 @@ public class LoadSceneSync : MonoBehaviour
             yield return null;
             timeX += Time.deltaTime;
             float progressPer = Mathf.Lerp(async.progress * 100f, 100f, timeX);
-            progressText.text = "Loading... " + (int)progressPer + "%";
+            progressText.text = "Now Loading... " + (int)progressPer + "%";
             if(async.progress >= 0.9f)
             {
                 progressPer += Time.deltaTime;

@@ -7,14 +7,14 @@ public class Scene_Change_Mgr : MonoBehaviour
 {
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
 
-    //public void GoMainPage()
-    //{
-    //    SceneManager.LoadScene(1);
-    //}
+    public void GoMainPage()
+    {
+        SceneManager.LoadScene(1);
+    }
 
     public void Exit()
     {
