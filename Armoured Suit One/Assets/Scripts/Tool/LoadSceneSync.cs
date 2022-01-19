@@ -8,16 +8,15 @@ public class LoadSceneSync : MonoBehaviour
 {
     public static string nextScene;
     public Text progressText;
-    public string targetScene;
 
     private void Start()
-    {
-        StartCoroutine("LoadScene");
+    {        
+        StartCoroutine(LoadScene());
     }
 
     public static void LoadScene(string sceneName)
     {
-        nextScene = sceneName;
+        nextScene = sceneName;        
         SceneManager.LoadScene("Load Scene");
     }
 
@@ -25,7 +24,7 @@ public class LoadSceneSync : MonoBehaviour
     {
         yield return null;
 
-        AsyncOperation async = SceneManager.LoadSceneAsync(targetScene);
+        AsyncOperation async = SceneManager.LoadSceneAsync(nextScene);
         async.allowSceneActivation = false;
         float timeX = 0;
         while(!async.isDone)

@@ -104,8 +104,9 @@ public class Player_Maker : MonoBehaviour
         player.weapon2Trans = weapon2Trans;
         player.weapon2Charge = weapon2Charge;
 
-        this.player = Instantiate(playerPrefab) as GameObject;
-        this.player.name = this.player.tag + flightName;
+        //this.player = Instantiate(playerPrefab) as GameObject;
+        //this.player.name = this.player.tag + flightName;
         //this.player.SetActive(false);
+        //플레이어 소환 _ 현재 안씀
     }
 }

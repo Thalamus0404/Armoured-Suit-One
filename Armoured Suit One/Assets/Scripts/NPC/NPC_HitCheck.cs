@@ -24,7 +24,7 @@ public class NPC_HitCheck : MonoBehaviour
         ai = main.GetComponent<NPC_AI>();
         npc = main.GetComponent<NPC_Mgr>();
         StartCoroutine("MakeRndDirection");
-        counter = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
+        counter = GameObject.Find("SceneMgr").GetComponent<EnemyCounter>();
     }
 
     void Update()

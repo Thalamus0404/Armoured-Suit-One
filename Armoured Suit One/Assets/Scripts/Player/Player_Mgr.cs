@@ -56,11 +56,11 @@ public class Player_Mgr : MonoBehaviour
         maxflightShield = flightShield;
         maxflightBooster = flightBooster;
         maxflightEnergy = flightEnergy;
-        maxflightTrans = flightTrans;
-        flightTrans = 0;
+        //maxflightTrans = flightTrans;
+        //flightTrans = 0;
         hpSlider = GameObject.Find("HpSlider").GetComponent<Slider_Mgr>();
         shieldSlider = GameObject.Find("ShieldSlider").GetComponent<Slider_Mgr>();
-        transSlider = GameObject.Find("TransSlider").GetComponent<Slider_Mgr>();
+        //transSlider = GameObject.Find("TransSlider").GetComponent<Slider_Mgr>();
         energySlider = GameObject.Find("EnergySlider").GetComponent<Slider_Mgr>();
         boosterSlider = GameObject.Find("BoosterSlider").GetComponent<Slider_Mgr>();
         energyCircle = GameObject.Find("EnergyCircle").GetComponent<Cursor_Enegy_Circle>();
@@ -80,8 +80,8 @@ public class Player_Mgr : MonoBehaviour
         hpSlider.maxStatX = maxflightHp;
         shieldSlider.statX = flightShield;
         shieldSlider.maxStatX = maxflightShield;
-        transSlider.statX = flightTrans;
-        transSlider.maxStatX = maxflightTrans;
+        //transSlider.statX = flightTrans;
+        //transSlider.maxStatX = maxflightTrans;
         energySlider.statX = flightEnergy;
         energySlider.maxStatX = maxflightEnergy;
         boosterSlider.statX = flightBooster;

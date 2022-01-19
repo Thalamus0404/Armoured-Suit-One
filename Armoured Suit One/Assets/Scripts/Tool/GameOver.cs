@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
     public Player_Mgr player;
     public GameObject gameOverPanel;
 
-    public bool gameOver = false;
+    public bool isGameOver = false;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
     private void Update()
     {
         hp = player.flightHp;
-        if (hp <= 0 && !gameOver)
+        if (hp <= 0 && !isGameOver)
         {
             //Debug.Log("0ตส");
             StartCoroutine("GameSet");
@@ -27,7 +27,7 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator GameSet()
     {
-        gameOver = true;
+        isGameOver = true;
         Cursor.visible = true;
         yield return new WaitForEndOfFrame();
         gameOverPanel.SetActive(true);

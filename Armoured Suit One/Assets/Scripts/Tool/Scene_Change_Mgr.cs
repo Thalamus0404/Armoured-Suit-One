@@ -14,6 +14,8 @@ public class Scene_Change_Mgr : MonoBehaviour
     public void GoMainPage()
     {
         SceneManager.LoadScene(1);
+        Cursor.visible = true;
+        Time.timeScale = 1f;
     }
 
     public void Exit()

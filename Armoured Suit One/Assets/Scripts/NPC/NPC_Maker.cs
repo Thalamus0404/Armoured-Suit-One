@@ -84,6 +84,7 @@ public class NPC_Maker : MonoBehaviour
         {
             npcPool[i] = Instantiate(npcPrefab) as GameObject;
             npcPool[i].transform.position = new Vector3(transform.position.x + 3 * i, transform.position.y + i, transform.position.z - 2 * i);
+            npcPool[i].transform.rotation = transform.rotation;
             npcPool[i].name = npcPrefab.tag + objectName;
             npcPool[i].SetActive(true);
         }
@@ -91,6 +92,7 @@ public class NPC_Maker : MonoBehaviour
         {
             npcPool[i] = Instantiate(npcPrefab) as GameObject;
             npcPool[i].transform.position = new Vector3(transform.position.x - 3 * (i + 1), transform.position.y + i, transform.position.z - 3 * (i + 1));
+            npcPool[i].transform.rotation = transform.rotation;
             npcPool[i].name = npcPrefab.tag + objectName;
             npcPool[i].SetActive(true);
         }

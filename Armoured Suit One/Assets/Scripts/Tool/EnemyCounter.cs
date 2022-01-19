@@ -7,20 +7,23 @@ public class EnemyCounter : MonoBehaviour
 {
     public int count;
     public Text counter;
-    public NPC_Maker npc_Maker;
+    public NPC_Maker[] npc_Maker;
     public GameObject victoryPanel;
 
-    public bool gameOver = false;
+    public bool isVictory = false;
 
     void Start()
     {
-        count = npc_Maker.poolSize;
+        for (int i = 0; i < GameObject.FindGameObjectsWithTag("EnemyMaker").Length; i++)
+        {            
+            count += npc_Maker[i].poolSize;
+        }
     }
 
     private void Update()
     {
         counter.text = count.ToString();
-        if (count == 0 && !gameOver)
+        if (count <= 0 && !isVictory)
         {
             //Debug.Log("0ตส");
             StartCoroutine("Victory");
@@ -30,7 +33,7 @@ public class EnemyCounter : MonoBehaviour
     public IEnumerator Victory()
     {
 
-        gameOver = true;
+        isVictory = true;
         Cursor.visible = true;
         yield return new WaitForSeconds(5f);
         victoryPanel.SetActive(true);        

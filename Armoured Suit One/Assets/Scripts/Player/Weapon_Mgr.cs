@@ -41,6 +41,10 @@ public class Weapon_Mgr : MonoBehaviour
     public GameObject aimTarget;
     public float aimTime;
 
+    public PauseMenu pauseMenu;
+    public GameOver gameOver;
+    public EnemyCounter enemyCounter;
+
     RaycastHit hit;    
 
     void Start()
@@ -68,18 +72,19 @@ public class Weapon_Mgr : MonoBehaviour
             bulletCurTime += Time.deltaTime;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !pauseMenu.isPause && !gameOver.isGameOver && !enemyCounter.isVictory)
         {
             BulletFire();
         }
 
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1) && player.weapon2Charge > 0)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(ray, out hit);            
             if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
             {                
                 TargetAimming();
+                aimTarget.GetComponent<Target>().enabled = true;
             }
             else
             {
@@ -100,6 +105,10 @@ public class Weapon_Mgr : MonoBehaviour
             if (aimTime >= missaleAimTime && aimTarget.activeInHierarchy)
             {
                 MissaleFire();
+                if (aimTarget != lockOnTarget)
+                {
+                    aimTarget.GetComponent<Target>().enabled = false;
+                }
             }
             aimTime = 0;
         }
@@ -120,7 +129,8 @@ public class Weapon_Mgr : MonoBehaviour
     {
         if(lockOnTarget != null)
         {
-            lockOnTarget = null;
+            lockOnTarget.GetComponent<Target>().enabled = false;
+            lockOnTarget = null;            
         }        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit);
@@ -129,7 +139,6 @@ public class Weapon_Mgr : MonoBehaviour
             lockOnTarget = hit.collider.gameObject;
             lockOnTarget.GetComponent<Target>().enabled = true;
             Vector3 screenPos = Camera.main.WorldToScreenPoint(lockOnTarget.transform.position);
-
         }
     }
 
